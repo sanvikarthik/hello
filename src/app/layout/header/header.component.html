@@ -7,14 +7,14 @@
     <div class="flex items-center space-x-4">
       <a
         *ngIf="isOnUserListPage()"
-        routerLink="/user-input"
+        routerLink="user-input"
         routerLinkActive="active"
         class="nav-link text-white px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-400 transition duration-300"
         >Add Workout</a
       >
       <a
         *ngIf="isOnUserInputPage()"
-        routerLink="/user-list"
+        routerLink="user-list"
         routerLinkActive="active"
         class="nav-link text-white px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-400 transition duration-300"
         >Show List</a
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Logo -->
-    <img src="assets/images/logo.png" alt="Logo image" class="logo h-16" />
+    <img src="assets/images/logo.png" alt="Logo image" class="logo h-20" />
 
     <!-- Heading -->
     <h1 class="heading text-xl font-bold">Fitness Tracker</h1>
