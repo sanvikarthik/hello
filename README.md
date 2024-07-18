@@ -36,11 +36,16 @@ The Fitness Tracker app helps users record and manage their workout sessions eff
 
 ### Frontend:
 
-- Angular
-- TypeScript
-- HTML
-- Tailwind CSS
-- CSS
+- Angular      ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+
+- TypeScript     ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+
+- HTML     ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+
+- Tailwind CSS     ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+- CSS     ![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
 
 ## Setup Instructions
 
