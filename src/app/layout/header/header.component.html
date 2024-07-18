@@ -1,22 +1,33 @@
-<!-- header.component.html -->
-<header class="wrapper">
-  <!-- Logo image -->
-  <img src="assets/images/logogo.png" alt="Logo image" class="logo" />
-  <h1 class="heading">Fitness Tracker</h1>
-
+<header
+  class="wrapper bg-gradient-to-r from-black to-blue-900 text-white py-4 relative"
+>
   <!-- Navigation -->
-  <nav class="navbar">
-    <a
-      *ngIf="isOnUserListPage()"
-      routerLink="/user-input"
-      routerLinkActive="active"
-      >Add Workout</a
-    >
-    <a
-      *ngIf="isOnUserInputPage()"
-      routerLink="/user-list"
-      routerLinkActive="active"
-      >Show List</a
-    >
+  <nav class="navbar flex items-center justify-between px-4">
+    <!-- Navigation Links -->
+    <div class="flex items-center space-x-4">
+      <a
+        *ngIf="isOnUserListPage()"
+        routerLink="/user-input"
+        routerLinkActive="active"
+        class="nav-link text-white px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-400 transition duration-300"
+        >Add Workout</a
+      >
+      <a
+        *ngIf="isOnUserInputPage()"
+        routerLink="/user-list"
+        routerLinkActive="active"
+        class="nav-link text-white px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-400 transition duration-300"
+        >Show List</a
+      >
+    </div>
+
+    <!-- Logo -->
+    <img src="assets/images/logo.png" alt="Logo image" class="logo h-16" />
+
+    <!-- Heading -->
+    <h1 class="heading text-xl font-bold">Fitness Tracker</h1>
   </nav>
+
+  <!-- Bottom Line -->
+  <div class="absolute inset-x-0 bottom-0 h-1 bg-gray-300"></div>
 </header>
