@@ -26,7 +26,7 @@ export class UserInputComponent {
         workouts: [{ type: this.workoutType, minutes: this.workoutMinutes }],
       };
       this.userService.addUser(newUser);
-      this.router.navigate(['/']); // Navigate back to home
+      this.router.navigate(['/user-list']); // Navigate back to home
     }
   }
 }
