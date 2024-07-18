@@ -38,7 +38,8 @@ The Fitness Tracker app helps users record and manage their workout sessions eff
 
 - Frontend:
   - Angular ![Angular](https://skillicons.com/api/v1/skillicons/icons/angular.svg)
-  - TypeScript ![TypeScript](https://skillicons.com/api/v1/skillicons/icons/typescript.svg)
+- TypeScript ![TypeScript](https://skillicons.com/api/v1/skillicons/icons/typescript.svg)
+
   - HTML/CSS ![HTML/CSS](https://skillicons.com/api/v1/skillicons/icons/html5-css3.svg)
   - Tailwind CSS ![Tailwind CSS](https://skillicons.com/api/v1/skillicons/icons/tailwindcss.svg)
 
@@ -46,11 +47,26 @@ The Fitness Tracker app helps users record and manage their workout sessions eff
 
 ## Setup Instructions
 
-1. Clone the repository: `git clone https://github.com/your/repository.git`
-2. Navigate into the project directory: `cd project-directory`
-3. Install dependencies: `npm install`
-4. Start the development server: `ng serve`
-5. Open your browser and go to `http://localhost:4200`
+1. Clone the repository: ```console
+`git clone https://github.com/your/repository.git`
+
+````
+2. Navigate into the project directory: ```console
+`cd project-directory`
+````
+
+3. Install dependencies: ```console
+`npm install`
+
+````
+4. Start the development server: ```console
+`ng serve`
+````
+
+5. Open your browser and go to ```console
+`http://localhost:4200`
+
+```
 
 ---
 
@@ -74,6 +90,4 @@ Contributions are welcome! Please fork the repository and submit a pull request.
 
 ---
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
