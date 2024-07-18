@@ -1,1 +1,11 @@
-<p>home works!</p>
+<!-- home.component.html -->
+<div class="home">
+  <h1>Welcome to the Workout Tracker</h1>
+  <button (click)="navigateToAddUser()">Add User Input</button>
+  <h2>Recent User Entries</h2>
+  <ul>
+    <li *ngFor="let user of recentUsers">
+      {{ user.name }} - {{ getTotalWorkoutMinutes(user) }} minutes
+    </li>
+  </ul>
+</div>

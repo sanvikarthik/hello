@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService, User, Workout } from '../../services/user.service';
 
 @Component({
   selector: 'app-user-input',
@@ -11,13 +13,20 @@ import { FormsModule } from '@angular/forms';
 })
 export class UserInputComponent {
   userName: string = '';
-  workoutType: string = 'Cycling';
-  workoutMinutes: number = 60;
+  workoutType: string = 'Running';
+  workoutMinutes: number = 0;
+
+  constructor(private userService: UserService, private router: Router) {}
 
   addWorkout() {
-    console.log(
-      `User: ${this.userName}, Workout: ${this.workoutType}, Minutes: ${this.workoutMinutes}`
-    );
-    // Add workout logic here
+    if (this.userName && this.workoutMinutes > 0) {
+      const newUser: User = {
+        id: Date.now(),
+        name: this.userName,
+        workouts: [{ type: this.workoutType, minutes: this.workoutMinutes }],
+      };
+      this.userService.addUser(newUser);
+      this.router.navigate(['/']); // Navigate back to home
+    }
   }
 }

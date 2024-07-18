@@ -1,4 +1,3 @@
-// src/app/services/user.service.ts
 import { Injectable } from '@angular/core';
 
 export interface Workout {
@@ -43,7 +42,7 @@ export class UserService {
     },
   ];
 
-  getUsers() {
+  getUsers(): User[] {
     return this.users;
   }
 

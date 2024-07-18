@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { ProductsService } from '../services/products.service';
-import { Products } from '../../types';
-
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService, User } from '../services/user.service';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -9,13 +8,20 @@ import { Products } from '../../types';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-  constructor(private productsService: ProductsService) {}
+export class HomeComponent implements OnInit {
+  recentUsers: User[] = [];
+
+  constructor(private router: Router, private userService: UserService) {}
+
   ngOnInit() {
-    this.productsService
-      .getProducts('http://localhost:3000/clothes', { page: 0, perPage: 2 })
-      .subscribe((products: Products) => {
-        console.log(products.items);
-      });
+    this.recentUsers = this.userService.getUsers().slice(-5); // Get the last 5 users
+  }
+
+  navigateToAddUser() {
+    this.router.navigate(['/user-input']);
+  }
+
+  getTotalWorkoutMinutes(user: User): number {
+    return user.workouts.reduce((total, w) => total + w.minutes, 0);
   }
 }
