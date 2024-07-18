@@ -1,0 +1,54 @@
+<div class="user-list">
+  <div class="search-filter">
+    <input type="text" placeholder="Search" (input)="onSearch($event)" />
+    <select (change)="onFilter($event)">
+      <option value="All">All</option>
+      <option value="Running">Running</option>
+      <option value="Cycling">Cycling</option>
+      <option value="Swimming">Swimming</option>
+      <option value="Yoga">Yoga</option>
+      <!-- Add more options as needed -->
+    </select>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Workouts</th>
+        <th>Number of Workouts</th>
+        <th>Total Workout Minutes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of paginatedUsers">
+        <td>{{ user.name }}</td>
+        <td>{{ getWorkoutTypes(user) }}</td>
+        <td>{{ user.workouts.length }}</td>
+        <td>{{ getTotalWorkoutMinutes(user) }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <button
+      (click)="onPageChange(currentPage - 1)"
+      [disabled]="currentPage === 1"
+    >
+      Previous
+    </button>
+    <span>{{ currentPage }}</span>
+    <button
+      (click)="onPageChange(currentPage + 1)"
+      [disabled]="currentPage === totalPages"
+    >
+      Next
+    </button>
+    <span>Items per page:</span>
+    <select [(ngModel)]="itemsPerPage" (change)="onPageChange(1)">
+      <option [value]="5">5</option>
+      <option [value]="10">10</option>
+      <option [value]="15">15</option>
+    </select>
+  </div>
+</div>
