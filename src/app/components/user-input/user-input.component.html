@@ -1,23 +1,29 @@
-<div class="user-input">
+<div class="user-input bg-blue-900 rounded-lg shadow-md p-4 w-300 mx-auto">
   <form>
-    <div class="form-group">
-      <label for="userName">User Name*</label>
+    <div class="form-group mb-4">
+      <label for="userName" class="block mb-2 font-bold text-white"
+        >User Name*</label
+      >
       <input
         type="text"
         id="userName"
         name="userName"
         required
         [(ngModel)]="userName"
+        class="w-full px-4 py-2 bg-white border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition duration-300"
       />
     </div>
 
-    <div class="form-group">
-      <label for="workoutType">Workout Type*</label>
+    <div class="form-group mb-4">
+      <label for="workoutType" class="block mb-2 font-bold text-white"
+        >Workout Type*</label
+      >
       <select
         id="workoutType"
         name="workoutType"
         required
         [(ngModel)]="workoutType"
+        class="w-full px-4 py-2 bg-white border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition duration-300"
       >
         <option value="Cycling">Cycling</option>
         <option value="Running">Running</option>
@@ -26,17 +32,26 @@
       </select>
     </div>
 
-    <div class="form-group">
-      <label for="workoutMinutes">Workout Minutes*</label>
+    <div class="form-group mb-4">
+      <label for="workoutMinutes" class="block mb-2 font-bold text-white"
+        >Workout Minutes*</label
+      >
       <input
         type="number"
         id="workoutMinutes"
         name="workoutMinutes"
         required
         [(ngModel)]="workoutMinutes"
+        class="w-full px-4 py-2 bg-white border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition duration-300"
       />
     </div>
 
-    <button type="button" (click)="addWorkout()">Add Workout</button>
+    <button
+      type="button"
+      class="block w-full px-4 py-2 mt-4 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none focus:bg-blue-700 transition duration-300"
+      (click)="addWorkout()"
+    >
+      Add Workout
+    </button>
   </form>
 </div>

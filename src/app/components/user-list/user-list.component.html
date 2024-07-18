@@ -1,7 +1,15 @@
-<div class="user-list">
-  <div class="search-filter">
-    <input type="text" placeholder="Search" (input)="onSearch($event)" />
-    <select (change)="onFilter($event)">
+<div class="user-list bg-gray-900 rounded-lg shadow-md p-4">
+  <div class="search-filter flex justify-between mb-4">
+    <input
+      type="text"
+      placeholder="Search"
+      (input)="onSearch($event)"
+      class="p-2 border border-gray-300 rounded w-3/5 bg-white text-gray-800"
+    />
+    <select
+      (change)="onFilter($event)"
+      class="p-2 border border-gray-300 rounded w-2/5 ml-2 bg-white text-gray-800"
+    >
       <option value="All">All</option>
       <option value="Running">Running</option>
       <option value="Cycling">Cycling</option>
@@ -10,44 +18,62 @@
     </select>
   </div>
 
-  <table>
+  <table class="w-full border-collapse">
     <thead>
-      <tr>
-        <th>Name</th>
-        <th>Workouts</th>
-        <th>Number of Workouts</th>
-        <th>Total Workout Minutes</th>
+      <tr class="bg-gray-800">
+        <th class="border border-gray-300 py-2 px-4 text-gray-200">Name</th>
+        <th class="border border-gray-300 py-2 px-4 text-gray-200">Workouts</th>
+        <th class="border border-gray-300 py-2 px-4 text-gray-200">
+          Number of Workouts
+        </th>
+        <th class="border border-gray-300 py-2 px-4 text-gray-200">
+          Total Workout Minutes
+        </th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of paginatedUsers">
-        <td>{{ user.name }}</td>
-        <td>{{ getWorkoutTypes(user) }}</td>
-        <td>{{ user.workouts.length }}</td>
-        <td>{{ getTotalWorkoutMinutes(user) }}</td>
+      <tr *ngFor="let user of paginatedUsers" class="bg-gray-700">
+        <td class="border border-gray-300 py-2 px-4 text-gray-200">
+          {{ user.name }}
+        </td>
+        <td class="border border-gray-300 py-2 px-4 text-gray-200">
+          {{ getWorkoutTypes(user) }}
+        </td>
+        <td class="border border-gray-300 py-2 px-4 text-gray-200">
+          {{ user.workouts.length }}
+        </td>
+        <td class="border border-gray-300 py-2 px-4 text-gray-200">
+          {{ getTotalWorkoutMinutes(user) }}
+        </td>
       </tr>
     </tbody>
   </table>
 
-  <div class="pagination">
+  <div class="pagination flex justify-between items-center mt-4">
     <button
       (click)="onPageChange(currentPage - 1)"
       [disabled]="currentPage === 1"
+      class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none transition duration-300"
     >
       Previous
     </button>
-    <span>{{ currentPage }}</span>
+    <span class="text-gray-200">{{ currentPage }}</span>
     <button
       (click)="onPageChange(currentPage + 1)"
       [disabled]="currentPage === totalPages"
+      class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none transition duration-300"
     >
       Next
     </button>
-    <span>Items per page:</span>
-    <select [(ngModel)]="itemsPerPage" (change)="onPageChange(1)">
-      <option [value]="5">5</option>
-      <option [value]="10">10</option>
-      <option [value]="15">15</option>
+    <span class="ml-2 text-gray-200">Items per page:</span>
+    <select
+      [(ngModel)]="itemsPerPage"
+      (change)="onPageChange(1)"
+      class="p-2 border border-gray-300 rounded ml-2 bg-white text-gray-800"
+    >
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
     </select>
   </div>
 </div>

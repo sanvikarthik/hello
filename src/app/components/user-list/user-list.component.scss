@@ -1,39 +1,52 @@
-/* src/app/components/user-list/user-list.component.scss */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 .user-list {
+  @apply bg-gray-900 rounded-lg shadow-md p-4;
+
   .search-filter {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    @apply flex justify-between mb-4;
+
+    input {
+      @apply p-2 border border-gray-300 rounded w-3/5 bg-white text-gray-800;
+    }
+
+    select {
+      @apply p-2 border border-gray-300 rounded w-2/5 ml-2 bg-white text-gray-800;
+    }
   }
 
   table {
-    width: 100%;
-    border-collapse: collapse;
+    @apply w-full border-collapse mt-4;
 
     th,
     td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: left;
+      @apply border border-gray-300 py-2 px-4 text-gray-200;
     }
 
     th {
-      background-color: #f4f4f4;
+      @apply bg-gray-800;
+    }
+
+    tbody {
+      @apply bg-gray-700;
     }
   }
 
   .pagination {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
+    @apply flex justify-between items-center mt-4;
 
     button {
-      padding: 5px 10px;
+      @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none transition duration-300;
     }
 
     select {
-      margin-left: 5px;
+      @apply p-2 border border-gray-300 rounded ml-2 bg-white text-gray-800;
+    }
+
+    span {
+      @apply text-gray-200;
     }
   }
 }

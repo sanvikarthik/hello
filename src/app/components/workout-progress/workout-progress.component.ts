@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService, User } from '../../services/user.service';
 import { ChartOptions, ChartType, ChartDataset } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { CommonModule } from '@angular/common';
+import { UserService, User } from '../../services/user.service';
+import { Type } from '@angular/compiler';
 
 @Component({
   selector: 'app-workout-progress',
   templateUrl: './workout-progress.component.html',
   styleUrls: ['./workout-progress.component.scss'],
   standalone: true,
-  imports: [BaseChartDirective],
+  imports: [CommonModule, BaseChartDirective],
 })
 export class WorkoutProgressComponent implements OnInit {
-  public barChartOptions: ChartOptions = {
+  public barChartOptions: ChartOptions<'bar'> = {
     responsive: true,
   };
   public barChartLabels: string[] = [];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
 
-  public barChartData: ChartDataset[] = [{ data: [], label: 'Total Minutes' }];
+  public barChartData: ChartDataset<'bar'>[] = [
+    { data: [], label: 'Total Minutes' },
+  ];
 
   constructor(private userService: UserService) {}
 

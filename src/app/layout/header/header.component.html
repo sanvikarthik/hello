@@ -1,6 +1,22 @@
-<header class="wrapper row full-center">
+<!-- header.component.html -->
+<header class="wrapper">
   <!-- Logo image -->
-  <img src="assets/images/logo.jpg" alt="Logo image" class="logo" />
+  <img src="assets/images/logogo.png" alt="Logo image" class="logo" />
   <h1 class="heading">Fitness Tracker</h1>
+
   <!-- Navigation -->
+  <nav class="navbar">
+    <a
+      *ngIf="isOnUserListPage()"
+      routerLink="/user-input"
+      routerLinkActive="active"
+      >Add Workout</a
+    >
+    <a
+      *ngIf="isOnUserInputPage()"
+      routerLink="/user-list"
+      routerLinkActive="active"
+      >Show List</a
+    >
+  </nav>
 </header>
