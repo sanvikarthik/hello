@@ -35,13 +35,10 @@ The Fitness Tracker app helps users record and manage their workout sessions eff
 ## Technologies Used
 
 - Frontend:
-  - - Angular ![Angular](https://github.com/tandpfun/skill-icons/blob/main/icons/Angular-Dark.svg?short_path=7ec3c52)
-- TypeScript ![TypeScript](https://skillicons.com/api/v1/skillicons/icons/typescript.svg)
-
-  - HTML/CSS ![HTML/CSS](https://skillicons.com/api/v1/skillicons/icons/html5-css3.svg)
-  - Tailwind CSS ![Tailwind CSS](https://skillicons.com/api/v1/skillicons/icons/tailwindcss.svg)
-
----
+- Angular ![Angular](https://skillicons.dev/api/v1/skillicons/icons/angular.svg)
+- TypeScript ![TypeScript](https://skillicons.dev/api/v1/skillicons/icons/typescript.svg)
+- HTML/CSS ![HTML/CSS](https://skillicons.dev/api/v1/skillicons/icons/html5-css3.svg)
+- Tailwind CSS ![Tailwind CSS](https://skillicons.dev/api/v1/skillicons/icons/tailwindcss.svg)
 
 ## Setup Instructions
 
