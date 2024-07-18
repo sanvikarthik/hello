@@ -17,7 +17,9 @@ export class UserInputComponent {
   workoutMinutes: number = 0;
 
   constructor(private userService: UserService, private router: Router) {}
-
+  incrementMinutes() {
+    this.workoutMinutes++;
+  }
   addWorkout() {
     if (this.userName && this.workoutMinutes > 0) {
       const newUser: User = {
