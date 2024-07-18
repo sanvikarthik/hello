@@ -34,7 +34,8 @@ The Fitness Tracker app helps users record and manage their workout sessions eff
 
 ## Technologies Used
 
-- Frontend:
+### Frontend:
+
 - Angular
 - TypeScript
 - HTML
