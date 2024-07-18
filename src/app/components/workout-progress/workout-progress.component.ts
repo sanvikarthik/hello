@@ -1,40 +1,67 @@
-import { Component, OnInit } from '@angular/core';
-import { ChartOptions, ChartType, ChartDataset } from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserService, User } from '../../services/user.service';
-import { Type } from '@angular/compiler';
+import { UserService, User } from '../../services/user.service'; // Adjust the path as needed
+import { Chart } from 'chart.js/auto';
 
 @Component({
   selector: 'app-workout-progress',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './workout-progress.component.html',
   styleUrls: ['./workout-progress.component.scss'],
-  standalone: true,
-  imports: [CommonModule, BaseChartDirective],
 })
-export class WorkoutProgressComponent implements OnInit {
-  public barChartOptions: ChartOptions<'bar'> = {
-    responsive: true,
-  };
-  public barChartLabels: string[] = [];
-  public barChartType: ChartType = 'bar';
-  public barChartLegend = true;
+export class WorkoutProgressComponent implements AfterViewInit {
+  users: User[] = [];
+  selectedUser: User | null = null;
+  chart: Chart | null = null;
 
-  public barChartData: ChartDataset<'bar'>[] = [
-    { data: [], label: 'Total Minutes' },
-  ];
-
-  constructor(private userService: UserService) {}
-
-  ngOnInit(): void {
-    this.loadData();
+  constructor(private userService: UserService) {
+    this.users = this.userService.getUsers();
   }
 
-  loadData(): void {
-    const users: User[] = this.userService.getUsers();
-    this.barChartLabels = users.map((user) => user.name);
-    this.barChartData[0].data = users.map((user) =>
-      user.workouts.reduce((total, workout) => total + workout.minutes, 0)
-    );
+  ngAfterViewInit() {
+    // Initialize the chart with no data
+    this.chart = new Chart('workoutChart', {
+      type: 'bar',
+      data: {
+        labels: [],
+        datasets: [
+          {
+            label: 'Minutes',
+            data: [],
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  }
+
+  selectUser(user: User) {
+    this.selectedUser = user;
+    this.updateChart();
+  }
+
+  updateChart() {
+    if (this.chart && this.selectedUser) {
+      const workoutTypes = this.selectedUser.workouts.map(
+        (workout) => workout.type
+      );
+      const workoutMinutes = this.selectedUser.workouts.map(
+        (workout) => workout.minutes
+      );
+
+      this.chart.data.labels = workoutTypes;
+      this.chart.data.datasets[0].data = workoutMinutes;
+      this.chart.update();
+    }
   }
 }

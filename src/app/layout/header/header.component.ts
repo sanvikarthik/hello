@@ -35,4 +35,7 @@ export class HeaderComponent {
   isOnUserInputPage(): boolean {
     return this.router.url === '/user-input';
   }
+  isOnWorkoutProgressPage(): boolean {
+    return this.router.url === '/workout-progress';
+  }
 }
