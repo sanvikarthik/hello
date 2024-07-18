@@ -1,4 +1,3 @@
-// src/app/services/user.service.spec.ts
 import { TestBed } from '@angular/core/testing';
 import { UserService } from './user.service';
 
@@ -6,7 +5,9 @@ describe('UserService', () => {
   let service: UserService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [UserService], // Provide the UserService itself
+    });
     service = TestBed.inject(UserService);
   });
 
@@ -30,4 +31,6 @@ describe('UserService', () => {
     expect(users.length).toBe(4);
     expect(users[3]).toEqual(newUser);
   });
+
+  // Add more tests as needed for edge cases and other functionalities
 });
