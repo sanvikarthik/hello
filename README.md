@@ -1,7 +1,5 @@
 # Fitness Tracker App
 
-![Fitness Tracker Logo](https://example.com/logo.png)
-
 Track and manage your fitness activities with ease!
 
 ---
@@ -37,7 +35,7 @@ The Fitness Tracker app helps users record and manage their workout sessions eff
 ## Technologies Used
 
 - Frontend:
-  - - Angular ![Angular](https://skillicons.com/api/v1/skillicons/icons/angular.svg)
+  - - Angular ![Angular](https://skillicons.dev/icons?i=all)
 - TypeScript ![TypeScript](https://skillicons.com/api/v1/skillicons/icons/typescript.svg)
 
   - HTML/CSS ![HTML/CSS](https://skillicons.com/api/v1/skillicons/icons/html5-css3.svg)
