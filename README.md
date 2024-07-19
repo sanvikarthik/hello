@@ -11,8 +11,7 @@ Track and manage your fitness activities with ease!
 - [Technologies Used](#technologies-used)
 - [Setup Instructions](#setup-instructions)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ---
 
@@ -68,5 +67,9 @@ The Fitness Tracker app helps users record and manage their workout sessions eff
 - **Viewing Workouts:**
   - Navigate to the "Show List" page to view all recorded workouts.
   - Use filters and search to find specific workouts.
+- **Workout Progress:**
+  -Component in Building stages
+  -uses ng2-charts to display a bar chart on the screesn
+  -Shows user progress in different types of workouts   
 
 ---
