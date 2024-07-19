@@ -12,6 +12,6 @@
   </div>
   <div class="workout-details" *ngIf="selectedUser">
     <h2>{{ selectedUser.name }}'s workout progress</h2>
-    <canvas id="workoutChart"></canvas>
+    <canvas #workoutChart width="400" height="400"></canvas>
   </div>
 </div>
